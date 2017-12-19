@@ -1,0 +1,27 @@
+server:
+  port: 8081
+
+debug: false
+management:
+  security:
+    enabled: false
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+
+user:
+  UserListByEmailApi: http://localhost:8080/user/list/email/
+spring:
+  application:
+    name: consumer-user-application_2
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka.server1:8762/eureka,http://never:123456@eureka.server0:8761/eureka/
+  instance:
+    prefer-ip-address: true

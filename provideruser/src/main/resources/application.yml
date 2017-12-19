@@ -1,0 +1,32 @@
+server:
+  port: 8080
+
+debug: false
+spring:
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+  datasource:
+    url: jdbc:mysql://192.168.159.128:3306/test
+    username: root
+    password: 123456
+  application:
+    name: provider-user-application_1
+management:
+  security:
+    enabled: false
+info:
+  app:
+    name: @project.artifactId@
+    encoding: @project.build.sourceEncoding@
+    java:
+      source: @java.version@
+      target: @java.version@
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka.server1:8762/eureka,http://never:123456@eureka.server0:8761/eureka/
+  instance:
+    prefer-ip-address: true

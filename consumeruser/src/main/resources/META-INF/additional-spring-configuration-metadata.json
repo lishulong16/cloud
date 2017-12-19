@@ -1,0 +1,8 @@
+{
+  "properties": [
+    {
+      "name": "user.UserListByEmailApi",
+      "type": "java.lang.String",
+      "description": "根据email获取用户列表."
+  }
+] }

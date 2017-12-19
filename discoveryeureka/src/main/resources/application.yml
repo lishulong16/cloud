@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: discovery-eureka-application-1
+management:
+  security:
+    enabled: false
+server:
+  port: 8761
+#eureka:
+#  instance:
+#    hostname: eureka_server_0
+#  client:
+#    service-url:
+#      defaultZone: http://eureka_server_1:8762/eureka/
+#    fetch-registry: false
+#    register-with-eureka: false
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka.server1:8761/eureka
+    fetch-registry: false
+    register-with-eureka: false
+security:
+  basic:
+    enabled: true
+  user:
+    name: never
+    password: 123456
