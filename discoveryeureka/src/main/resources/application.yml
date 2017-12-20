@@ -16,6 +16,10 @@ server:
 #    register-with-eureka: false
 
 eureka:
+  instance:
+    prefer-ip-address: true
+    metadata-map:
+      my-metadata: 惟梦闲人不梦君
   client:
     service-url:
       defaultZone: http://eureka.server1:8761/eureka

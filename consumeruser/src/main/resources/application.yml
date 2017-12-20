@@ -13,9 +13,8 @@ info:
       source: @java.version@
       target: @java.version@
 
-
 user:
-  UserListByEmailApi: http://localhost:8080/user/list/email/
+  UserListByEmailApi: http://provider-user-application_1/user/list/email/
 spring:
   application:
     name: consumer-user-application_2
@@ -25,3 +24,5 @@ eureka:
       defaultZone: http://eureka.server1:8762/eureka,http://never:123456@eureka.server0:8761/eureka/
   instance:
     prefer-ip-address: true
+    metadata-map:
+      my-metadata: 惟梦闲人
