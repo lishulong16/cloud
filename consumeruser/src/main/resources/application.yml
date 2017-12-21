@@ -14,7 +14,7 @@ info:
       target: @java.version@
 
 user:
-  UserListByEmailApi: http://provider-user-application_1/user/list/email/
+  UserListByEmailApi: http://provider-user-application/user/list/email/
 spring:
   application:
     name: consumer-user-application
