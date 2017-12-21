@@ -1,5 +1,5 @@
 server:
-  port: 8081
+  port: 8090
 
 debug: false
 management:
@@ -17,7 +17,7 @@ user:
   UserListByEmailApi: http://provider-user-application_1/user/list/email/
 spring:
   application:
-    name: consumer-user-application_2
+    name: consumer-user-application
 eureka:
   client:
     service-url:

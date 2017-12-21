@@ -1,5 +1,7 @@
 package cloud.consumeruser.controller;
 
+import cloud.consumeruser.model.User;
+import cloud.consumeruser.service.UserService;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,21 +34,30 @@ public class ConsumerUserController {
     @Value("${user.UserListByEmailApi}")
     private String getUserListByEmailApi;
 
+    @Autowired
+    private UserService userService;
+
+//    @GetMapping("/user/{email}")
+//    public ResponseEntity<List> getByEmail(@PathVariable String email) {
+//        logger.info("request user list by email,argument:{}", email);
+//        return this.restTemplate.getForEntity(getUserListByEmailApi + email, List.class);
+//    }
+
     @GetMapping("/user/{email}")
-    public ResponseEntity<List> getByEmail(@PathVariable String email) {
+    public List<User> getByEmail(@PathVariable String email) {
         logger.info("request user list by email,argument:{}", email);
-        return this.restTemplate.getForEntity(getUserListByEmailApi + email, List.class);
+        return this.userService.getUserListByEmail(email);
     }
 
     @GetMapping("/user-instance")
     public List<ServiceInstance> showInfo() {
         logger.info("request ServiceInstance,argument:{}", "/user-instance");
-        return this.discoveryClient.getInstances("consumer-user-application_2");
+        return this.discoveryClient.getInstances("consumer-user-application");
     }
 
     @GetMapping("/log-instance")
     public void logshowInfo() {
-        ServiceInstance choose = this.loadBalancerClient.choose("consumer-user-application_2");
+        ServiceInstance choose = this.loadBalancerClient.choose("consumer-user-application");
         logger.info("request log show Info,argument:{},{}:{}:{}", "/log-instance",choose.getServiceId(),choose.getHost(),choose.getPort());
     }
 
