@@ -22,7 +22,7 @@ eureka:
       my-metadata: 惟梦闲人不梦君
   client:
     service-url:
-      defaultZone: http://eureka.server1:8761/eureka
+      defaultZone: http://eureka.server1:8761/eureka/
     fetch-registry: false
     register-with-eureka: false
 security:

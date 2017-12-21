@@ -1,6 +1,6 @@
 spring:
   application:
-    name: discovery-eureka-application-1
+    name: discovery-eureka-application-2
 server:
   port: 8762
 #eureka:
